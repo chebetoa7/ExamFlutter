@@ -12,7 +12,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   int _selectedIndex = 0;
   String _selectedStore = "Terminal del Norte";
-  // Agrega estas variables al inicio de la clase _HomeScreenState
+
   int _selectedCategoryIndex = 1; // Frutas/Verduras seleccionado por defecto
   final List<String> _categories = ['Todo', 'Frutas/Verduras', 'Carnes', 'Abarrotes'];
   final List<bool> _favorites = [false, false, false, false]; // Estado de favoritos
@@ -90,24 +90,24 @@ class _HomeScreenState extends State<HomeScreen> {
           color: Colors.transparent,
           borderRadius: BorderRadius.circular(20),
           border: Border.all(
-            color: AppColors.secondary, // Verde claro #94BE2C
+            color: AppColors.secondary, 
             width: 2,
           ),
         ),
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            // Icono de ubicación (como Google Maps)
+            
             Icon(
               Icons.location_on, // Icono de ubicación
-              color: AppColors.secondary, // Verde claro
+              color: AppColors.secondary, 
               size: 18,
             ),
             const SizedBox(width: 6),
             Text(
               _selectedStore,
               style: TextStyle(
-                color: AppColors.secondary, // Verde claro #94BE2C
+                color: AppColors.secondary, 
                 fontSize: 14,
                 fontWeight: FontWeight.w500,
                 fontFamily: 'HelveticaNeue',
@@ -117,7 +117,7 @@ class _HomeScreenState extends State<HomeScreen> {
             const SizedBox(width: 4),
             Icon(
               Icons.arrow_drop_down,
-              color: AppColors.secondary, // Verde claro
+              color: AppColors.secondary, 
               size: 20,
             ),
           ],
@@ -126,12 +126,12 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  // Botón de menú circular naranja
+  // Botón de menú circular 
   Widget _buildMenuButton() {
     return Container(
       margin: const EdgeInsets.only(right: 8),
       decoration: BoxDecoration(
-        color: AppColors.primary, // Naranja #F85E11
+        color: AppColors.primary, 
         shape: BoxShape.circle,
       ),
       child: IconButton(
@@ -160,7 +160,7 @@ class _HomeScreenState extends State<HomeScreen> {
             children: [
               Icon(
                 Icons.location_on,
-                color: AppColors.secondary, // Verde claro
+                color: AppColors.secondary, 
                 size: 16,
               ),
               const SizedBox(width: 4),
@@ -213,7 +213,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
               const SizedBox(width: 12),
               
-              // Botón de filtros/ajustes
+             
               _buildFilterButton(),
             ],
           ),
@@ -222,7 +222,7 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
-  // Botón de filtros/ajustes
+  
   Widget _buildFilterButton() {
     return Container(
       width: 45,
@@ -231,14 +231,14 @@ class _HomeScreenState extends State<HomeScreen> {
         color: Colors.transparent,
         borderRadius: BorderRadius.circular(5),
         border: Border.all(
-          color: AppColors.primary, // Naranja #F85E11
+          color: AppColors.primary, 
           width: 1.5,
         ),
       ),
       child: IconButton(
         icon: Icon(
           Icons.tune,
-          color: AppColors.primary, // Naranja
+          color: AppColors.primary, 
           size: 22,
         ),
         onPressed: () {
@@ -301,15 +301,15 @@ class _HomeScreenState extends State<HomeScreen> {
         Positioned(
           bottom: 0,
           right: 2,
-           width: 145, // Mitad del ancho
+           width: 145, 
             height: 90,
           child: SizedBox(
             child: Image.asset(
-              'assets/images/banner.png', // ← Cambiado a PNG
+              'assets/images/banner.png', 
               fit: BoxFit.cover,
               alignment: Alignment.centerRight,
               errorBuilder: (context, error, stackTrace) {
-                // Si no existe la imagen, usar fondo de color
+            
                 return Container(
                   decoration: BoxDecoration(
                     color: AppColors.primary.withOpacity(0.8),
@@ -374,7 +374,7 @@ class _HomeScreenState extends State<HomeScreen> {
           borderRadius: BorderRadius.circular(20),
           
           border: Border.all(
-            color: AppColors.secondary, // Verde claro #94BE2C
+            color: AppColors.secondary, 
             width: 2,
           ),
         ),
@@ -412,7 +412,7 @@ Widget _buildCategoriesSubmenu() {
                 border: Border(
                   bottom: BorderSide(
                     color: _selectedCategoryIndex == index 
-                        ? AppColors.secondary // Verde claro para el seleccionado
+                        ? AppColors.secondary 
                         : Colors.transparent,
                     width: 2,
                   ),
@@ -423,11 +423,11 @@ Widget _buildCategoriesSubmenu() {
                 style: TextStyle(
                   fontSize: 16,
                   fontWeight: _selectedCategoryIndex == index 
-                      ? FontWeight.bold // Bold para el seleccionado
+                      ? FontWeight.bold 
                       : FontWeight.normal,
                   color: _selectedCategoryIndex == index 
-                      ? AppColors.secondary // Verde claro para el seleccionado
-                      : AppColors.textSecondary, // Gris para los no seleccionados
+                      ? AppColors.secondary 
+                      : AppColors.textSecondary, 
                 ),
               ),
             ),
@@ -439,7 +439,6 @@ Widget _buildCategoriesSubmenu() {
 }
 
 
-// Grid de productos - AJUSTADO
 Widget _buildProductsGrid() {
 
   return Container(
@@ -452,7 +451,7 @@ Widget _buildProductsGrid() {
         crossAxisCount: 2,
         crossAxisSpacing: 10,
         mainAxisSpacing: 10,
-        childAspectRatio: 0.65, // Más compacto
+        childAspectRatio: 0.65,
         
       ),
       itemCount: 4,
@@ -465,7 +464,7 @@ Widget _buildProductsGrid() {
 }
 
 
-// Tarjeta de producto individual - VERSIÓN CORREGIDA
+// Tarjeta de producto individual 
 Widget _buildProductCard(int index) {
   return Container(
     width: 80,
@@ -485,7 +484,7 @@ Widget _buildProductCard(int index) {
     ),
     child: Stack(
       children: [
-        // Botón de favorito (corazón) - CORREGIDO
+    
         Positioned(
           top: 8,
           right: 8,
@@ -515,17 +514,17 @@ Widget _buildProductCard(int index) {
           ),
         ),
         
-        // Contenido principal - MÁS COMPACTO
+        // Contenido principal 
         Padding(
           padding: const EdgeInsets.all(10), // Menos padding
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // Imagen del producto - MÁS PEQUEÑA
+              // Imagen del producto 
               Center(
                 child: Image.asset(
                   'assets/images/limones.png',
-                  width: 70,  // Más pequeña
+                  width: 70, 
                   height: 70,
                   fit: BoxFit.contain,
                   errorBuilder: (context, error, stackTrace) {
@@ -534,13 +533,13 @@ Widget _buildProductCard(int index) {
                 ),
               ),
               
-              const SizedBox(height: 6), // Menos espacio
+              const SizedBox(height: 6), 
               
               // Nombre del producto
               Text(
                 'Limón sin semilla',
                 style: TextStyle(
-                  fontSize: 13, // Un poco más pequeño
+                  fontSize: 13, 
                   fontWeight: FontWeight.bold,
                   color: AppColors.textPrimary,
                 ),
@@ -548,7 +547,7 @@ Widget _buildProductCard(int index) {
                 overflow: TextOverflow.ellipsis,
               ),
               
-              const SizedBox(height: 3), // Menos espacio
+              const SizedBox(height: 3), 
               
               // Peso
               Text(
@@ -561,7 +560,7 @@ Widget _buildProductCard(int index) {
               
               const Spacer(),
               
-              // Precio y botón de agregar - MÁS COMPACTO
+              // Precio y botón de agregar
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -570,13 +569,13 @@ Widget _buildProductCard(int index) {
                   Text(
                     '\$25.00',
                     style: TextStyle(
-                      fontSize: 12, // Un poco más grande
+                      fontSize: 12, 
                       fontWeight: FontWeight.bold,
                       color: AppColors.secondary,
                     ),
                   ),
                   
-                  // Botón de agregar - MÁS PEQUEÑO
+                  // Botón de agregar 
                   Container(
                     width: 26,
                     height: 26,
@@ -635,7 +634,7 @@ Widget _buildQuantityButton(int index) {
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: [
-        // Botón menos
+        
         GestureDetector(
           onTap: () {
             print('Disminuir cantidad');

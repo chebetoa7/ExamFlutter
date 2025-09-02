@@ -32,7 +32,7 @@ void _navigateToHome(BuildContext context) {
           height: MediaQuery.of(context).size.height,
           child: Column(
             children: [
-              // Sección de logos (imagen principal + logo adicional)
+            
               _buildLogoSection(context),
               
               // Formulario de login
@@ -49,7 +49,7 @@ void _navigateToHome(BuildContext context) {
 
   Widget _buildLogoSection(BuildContext context) {
   return Container(
-    height: MediaQuery.of(context).size.height * 0.45, // Un poco más de espacio
+    height: MediaQuery.of(context).size.height * 0.45, 
     decoration: BoxDecoration(
       color: AppColors.background,
       borderRadius: const BorderRadius.only(
@@ -107,7 +107,7 @@ Widget _buildLogotipoText() {
       'assets/images/logotipo.png',
       fit: BoxFit.contain,
       errorBuilder: (context, error, stackTrace) {
-        // Si falla la imagen, mostramos texto alternativo
+        
         return const Center(
           child: Text(
             'LA COMER',
@@ -133,7 +133,7 @@ Widget _buildLogotipoText() {
           const SizedBox(height: 20),
           _buildPasswordField(),
           const SizedBox(height: 30),
-          _buildLoginButton(context), // ← Pasar context aquí
+          _buildLoginButton(context), 
           const SizedBox(height: 20),
           _buildRegisterText(),
         ],
@@ -232,11 +232,11 @@ Widget _buildLogotipoText() {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            // Divider con texto
+           
             _buildDividerWithText(),
             const SizedBox(height: 20),
             
-            // Botones de redes sociales (solo Facebook con color oficial)
+            // Botones de redes sociales 
             _buildSocialButtons(),
           ],
         ),
