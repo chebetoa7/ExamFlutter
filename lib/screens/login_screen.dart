@@ -60,7 +60,7 @@ void _navigateToHome(BuildContext context) {
     child: Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        // Logo principal (ave de La Comer)
+        // Logo principal 
         _buildLaComerLogo(),
         const SizedBox(height: 15),
         
@@ -275,7 +275,7 @@ Widget _buildLogotipoText() {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        // Botón de Facebook (color oficial azul)
+        // Botón de Facebook 
         _buildSocialButton(
           icon: Icons.facebook,
           color: AppColors.facebookBlue,
